@@ -54,6 +54,13 @@ if wm then
     cmodal:bind('alt', 'left', 'Left Monitor', wm.throwLeft)
     cmodal:bind('alt', 'right', 'Right Monitor', wm.throwRight)
 
+
+    -- center
+    cmodal:bind('', 'C', 'Center Monitor', wm.centerOnScreen)
+
+    -- maximum
+    cmodal:bind('', 'M', 'Full Screen', wm.maximizeWindow)
+
     hsresizeM_keys = hsresizeM_keys or {"ctrl", "W"}
     if string.len(hsresizeM_keys[2]) > 0 then
         spoon.ModalMgr.supervisor:bind(hsresizeM_keys[1], hsresizeM_keys[2], "Enter command", function()
@@ -73,14 +80,14 @@ end
 -- })
 
 -- * Set Window Position on screen
-windowBind({"ctrl", "alt", "cmd"}, {
-  m = wm.maximizeWindow,    -- ⌃⌥⌘ + M
-  c = wm.centerOnScreen,    -- ⌃⌥⌘ + C
+-- windowBind({"ctrl", "alt", "cmd"}, {
+--   m = wm.maximizeWindow,    -- ⌃⌥⌘ + M
+--   c = wm.centerOnScreen,    -- ⌃⌥⌘ + C
 --   left = wm.leftHalf,       -- ⌃⌥⌘ + ←
 --   right = wm.rightHalf,     -- ⌃⌥⌘ + →
 --   up = wm.topHalf,          -- ⌃⌥⌘ + ↑
 --   down = wm.bottomHalf      -- ⌃⌥⌘ + ↓
-})
+-- })
 
 -- * Windows-like cycle
 -- windowBind({"ctrl", "alt", "cmd"}, {
