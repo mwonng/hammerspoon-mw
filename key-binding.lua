@@ -30,19 +30,19 @@ if wm then
 
     -- Left edge change
     cmodal:bind('ctrl', 'A', 'Extend Left', wm.leftToLeft)
-    cmodal:bind('command', 'A', 'Shrink Left', wm.leftToRight)
+    cmodal:bind('ctrl', 'D', 'Shrink Left', wm.leftToRight)
 
     -- Right edge change
-    cmodal:bind('ctrl', 'D', 'Extend Right', wm.rightToRight)
-    cmodal:bind('command', 'D', 'Shrink Right', wm.rightToLeft)
+    cmodal:bind('command', 'D', 'Extend Right', wm.rightToRight)
+    cmodal:bind('command', 'A', 'Shrink Right', wm.rightToLeft)
 
     -- Top edge change
     cmodal:bind('ctrl', 'W', 'Extend Top', wm.topUp)
-    cmodal:bind('command', 'W', 'Shrink Top', wm.topDown)
+    cmodal:bind('ctrl', 'S', 'Shrink Top', wm.topDown)
 
     -- Tottom edge change
-    cmodal:bind('ctrl', 'S', 'Extend Bottom', wm.bottomDown)
-    cmodal:bind('command', 'S', 'Shrink Bottom', wm.bottomUp)
+    cmodal:bind('command', 'S', 'Extend Bottom', wm.bottomDown)
+    cmodal:bind('command', 'W', 'Shrink Bottom', wm.bottomUp)
 
     -- half screen
     cmodal:bind('command', 'left', 'Left Half', wm.leftHalf)
@@ -54,7 +54,7 @@ if wm then
     cmodal:bind('alt', 'left', 'Left Monitor', wm.throwLeft)
     cmodal:bind('alt', 'right', 'Right Monitor', wm.throwRight)
 
-    hsresizeM_keys = hsresizeM_keys or {"ctrl", "R"}
+    hsresizeM_keys = hsresizeM_keys or {"ctrl", "W"}
     if string.len(hsresizeM_keys[2]) > 0 then
         spoon.ModalMgr.supervisor:bind(hsresizeM_keys[1], hsresizeM_keys[2], "Enter command", function()
             -- Deactivate some modal environments or not before activating a new one
